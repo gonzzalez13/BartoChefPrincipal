@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class BusquedaElemtoGlobal extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
@@ -21,7 +23,7 @@ public class BusquedaElemtoGlobal extends AppCompatActivity implements AdapterVi
     SQLiteHelper helper;
     ListView lv;
     String categoria;
-    TextView prueba;
+    Receta receta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,6 @@ public class BusquedaElemtoGlobal extends AppCompatActivity implements AdapterVi
 
         item = (EntidadList) getIntent().getSerializableExtra("objetoData");
         lv = findViewById(R.id.ListEleGlo);
-        prueba = findViewById(R.id.txtprueba);
         categoria = item.getTitulo();
         filtro(categoria);
         lv.setOnItemClickListener(this);
@@ -81,9 +82,21 @@ public class BusquedaElemtoGlobal extends AppCompatActivity implements AdapterVi
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
-
+        int _id=cursor.getInt(0);
         String titulo=cursor.getString(1) ;
+        String Categoria=cursor.getString(3 );
+        String chef=cursor.getString(4 );
+        String nacionalidad=cursor.getString(6 );
+        String ingredientes=cursor.getString(7 );
+        String prepacacion=cursor.getString(8 );
+        int puntos = cursor.getInt(2);
+        int foto= cursor.getInt(5);
 
-        prueba.setText(titulo);
+        receta = new Receta(_id,titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,puntos,foto);
+        Intent i = new Intent(this,Ficha_receta.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Receta",receta);
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }

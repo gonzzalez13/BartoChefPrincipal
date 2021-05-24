@@ -9,7 +9,7 @@ public class EstructuraBBDD {
             "CREATE TABLE IF NOT EXISTS "+ EstructuraRecta.TABLE_NAME_RECETAS +
                     "("+ EstructuraRecta._ID + " INTEGER PRIMARY KEY, "
                     + EstructuraRecta.COLUMN_NAME_NOMBRE + " text, "
-                    + EstructuraRecta.COLUMN_NAME_CALORIAS + " integer, "
+                    + EstructuraRecta.COLUMN_NAME_PUNTOS + " integer, "
                     + EstructuraRecta.COLUMN_NAME_CATEGORIA + " text, "
                     + EstructuraRecta.COLUMN_NAME_CHEF + " text,"
                     + EstructuraRecta.COLUMN_NAME_IMAGEN + " integer,"
@@ -26,7 +26,7 @@ public class EstructuraBBDD {
     public static class EstructuraRecta implements BaseColumns {
         public static final String TABLE_NAME_RECETAS ="recetas";
         public static final String COLUMN_NAME_NOMBRE = "nombre";
-        public static final String COLUMN_NAME_CALORIAS = "calorias";
+        public static final String COLUMN_NAME_PUNTOS = "puntos";
         public static final String COLUMN_NAME_CATEGORIA = "categoria";
         public static final String COLUMN_NAME_CHEF ="chef";
         public static final String COLUMN_NAME_IMAGEN = "imagen";
