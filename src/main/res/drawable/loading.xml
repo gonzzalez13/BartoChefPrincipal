@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:drawable="@drawable/fragmento01" android:duration="50" />
+    <item android:drawable="@drawable/fragmento02" android:duration="50" />
+    <item android:drawable="@drawable/fragmento03" android:duration="50" />
+    <item android:drawable="@drawable/fragmento04" android:duration="50" />
+    <item android:drawable="@drawable/fragmento05" android:duration="50" />
+    <item android:drawable="@drawable/fragmento06" android:duration="50" />
+    <item android:drawable="@drawable/fragmento07" android:duration="50" />
+    <item android:drawable="@drawable/fragmento08" android:duration="50" />
+    <item android:drawable="@drawable/fragmento09" android:duration="50" />
+    <item android:drawable="@drawable/fragmento10" android:duration="50" />
+    <item android:drawable="@drawable/fragmento11" android:duration="50" />
+    <item android:drawable="@drawable/fragmento12" android:duration="50" />
+    <item android:drawable="@drawable/fragmento13" android:duration="50" />
+    <item android:drawable="@drawable/fragmento14" android:duration="50" />
+    <item android:drawable="@drawable/fragmento15" android:duration="50" />
+    <item android:drawable="@drawable/fragmento16" android:duration="50" />
+    <item android:drawable="@drawable/fragmento17" android:duration="50" />
+    <item android:drawable="@drawable/fragmento19" android:duration="50" />
+    <item android:drawable="@drawable/fragmento20" android:duration="50" />
+    <item android:drawable="@drawable/fragmento21" android:duration="50" />
+    <item android:drawable="@drawable/fragmento22" android:duration="50" />
+    <item android:drawable="@drawable/fragmento23" android:duration="50" />
+    <item android:drawable="@drawable/fragmento24" android:duration="50" />
+    <item android:drawable="@drawable/fragmento25" android:duration="50" />
+    <item android:drawable="@drawable/fragmento26" android:duration="50" />
+    <item android:drawable="@drawable/fragmento27" android:duration="50" />
+    <item android:drawable="@drawable/fragmento28" android:duration="50" />
+    <item android:drawable="@drawable/fragmento29" android:duration="50" />
+    <item android:drawable="@drawable/fragmento30" android:duration="50" />
+    <item android:drawable="@drawable/fragmento31" android:duration="50" />
+    <item android:drawable="@drawable/fragmento32" android:duration="50" />
+    <item android:drawable="@drawable/fragmento33" android:duration="50" />
+    <item android:drawable="@drawable/fragmento34" android:duration="50" />
+    <item android:drawable="@drawable/fragmento35" android:duration="50" />
+    <item android:drawable="@drawable/fragmento36" android:duration="50" />
+    <item android:drawable="@drawable/fragmento37" android:duration="50" />
+    <item android:drawable="@drawable/fragmento38" android:duration="50" />
+    <item android:drawable="@drawable/fragmento39" android:duration="50" />
+    <item android:drawable="@drawable/fragmento40" android:duration="50" />
+    <item android:drawable="@drawable/fragmento41" android:duration="50" />
+    <item android:drawable="@drawable/fragmento42" android:duration="50" />
+    <item android:drawable="@drawable/fragmento43" android:duration="50" />
+    <item android:drawable="@drawable/fragmento44" android:duration="50" />
+    <item android:drawable="@drawable/fragmento45" android:duration="50" />
+    <item android:drawable="@drawable/fragmento46" android:duration="50" />
+    <item android:drawable="@drawable/fragmento47" android:duration="50" />
+    <item android:drawable="@drawable/fragmento48" android:duration="50" />
+    <item android:drawable="@drawable/fragmento49" android:duration="50" />
+
+</animation-list>
