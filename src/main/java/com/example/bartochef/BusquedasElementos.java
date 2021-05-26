@@ -86,8 +86,6 @@ public class BusquedasElementos extends AppCompatActivity implements AdapterView
 
         int _id=cursor.getInt(0);
         String titulo=cursor.getString(1) ;
-        prueba.setText(titulo);
-
         String Categoria=cursor.getString(3 );
         String chef=cursor.getString(4 );
         String nacionalidad=cursor.getString(6 );
@@ -95,6 +93,8 @@ public class BusquedasElementos extends AppCompatActivity implements AdapterView
         String prepacacion=cursor.getString(8 );
         int puntos = cursor.getInt(2);
         int foto= cursor.getInt(5);
+
+        prueba.setText(categoria);
 
         receta = new Receta(_id,titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,puntos,foto);
         Intent i = new Intent(this,Ficha_receta.class);

@@ -19,14 +19,16 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
    @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
+        db.execSQL(EstructuraBBDD.SQL_CREATE_USUARIOS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
 
         db.execSQL(EstructuraBBDD.SQL_DELETE_ENTRIES);
-        db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
+        db.execSQL(EstructuraBBDD.SQL_DELETE_USUARIO);
 
     }
 
