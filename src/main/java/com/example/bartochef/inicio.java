@@ -82,7 +82,7 @@ public class inicio extends AppCompatActivity implements AdapterView.OnItemClick
     }
 
     public void perfil(View view) {
-        Intent i = new Intent(this,Perfil.class);
+        Intent i = new Intent(this,InicioSesion.class);
         startActivity(i);
     }
 
