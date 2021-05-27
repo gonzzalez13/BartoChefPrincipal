@@ -10,29 +10,22 @@ public class Receta implements Serializable {
     private String nacionalidad;
     private String ingredientes;
     private String preparacion;
-    private int id;
-    private int puntos;
     private int plato;
 
     public Receta(){
 
     }
 
-    public Receta(int id,String titulo, String chef, String categoria, String nacionalidad, String ingredientes, String preparacion,int puntos, int plato) {
-        this.id = id;
+    public Receta(String titulo, String chef, String categoria, String nacionalidad, String ingredientes, String preparacion,int plato) {
         this.titulo = titulo;
         this.chef = chef;
         this.categoria = categoria;
         this.nacionalidad = nacionalidad;
         this.ingredientes = ingredientes;
         this.preparacion = preparacion;
-        this.puntos = puntos;
         this.plato = plato;
     }
 
-    public int getId() { return id; }
-
-    public void setId(int id) { this.id = id; }
 
     public String getTitulo() {
         return titulo;
@@ -90,7 +83,4 @@ public class Receta implements Serializable {
         this.categoria = categoria;
     }
 
-    public int getPuntos() { return puntos; }
-
-    public void setPuntos(int puntos) { this.puntos = puntos;}
 }

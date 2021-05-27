@@ -53,17 +53,15 @@ public class inicio extends AppCompatActivity implements AdapterView.OnItemClick
 
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
 
-        int _id=cursor.getInt(0);
         String titulo=cursor.getString(1) ;
         String Categoria=cursor.getString(3 );
         String chef=cursor.getString(4 );
         String nacionalidad=cursor.getString(6 );
         String ingredientes=cursor.getString(7 );
         String prepacacion=cursor.getString(8 );
-        int puntos = cursor.getInt(2);
         int foto= cursor.getInt(5);
 
-        receta = new Receta(_id,titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,puntos,foto);
+        receta = new Receta(titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,foto);
         Intent i = new Intent(this,Ficha_receta.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("Receta",receta);

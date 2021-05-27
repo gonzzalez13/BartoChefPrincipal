@@ -44,7 +44,7 @@ public class BusquedaElemtoGlobal extends AppCompatActivity implements AdapterVi
         helper = new SQLiteHelper(this);
         db = helper.getReadableDatabase();
 
-        String[] columns = {EstructuraBBDD.EstructuraRecta._ID,EstructuraBBDD.EstructuraRecta.COLUMN_NAME_NOMBRE, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CHEF, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_IMAGEN};
+        String[] columns = {EstructuraBBDD.EstructuraRecta._ID,EstructuraBBDD.EstructuraRecta.COLUMN_NAME_NOMBRE,EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CHEF, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_IMAGEN, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CALORIAS, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CATEGORIA, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_NACIONALIDAD, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_INGREDIENTES, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_PREPARACION};
         String selection = EstructuraBBDD.EstructuraRecta.COLUMN_NAME_NACIONALIDAD +" = (?)";
         String[] SelectionArgs = {Categoria};
         String groupBy= null;
@@ -82,17 +82,15 @@ public class BusquedaElemtoGlobal extends AppCompatActivity implements AdapterVi
     @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
-        int _id=cursor.getInt(0);
         String titulo=cursor.getString(1) ;
-        String Categoria=cursor.getString(3 );
-        String chef=cursor.getString(4 );
+        String Categoria=cursor.getString(5 );
+        String chef=cursor.getString(2 );
         String nacionalidad=cursor.getString(6 );
         String ingredientes=cursor.getString(7 );
         String prepacacion=cursor.getString(8 );
-        int puntos = cursor.getInt(2);
-        int foto= cursor.getInt(5);
+        int foto= cursor.getInt(3);
 
-        receta = new Receta(_id,titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,puntos,foto);
+        receta = new Receta(titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,foto);
         Intent i = new Intent(this,Ficha_receta.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("Receta",receta);
