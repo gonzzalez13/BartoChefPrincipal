@@ -17,7 +17,7 @@ public class Registro extends AppCompatActivity {
     TextView alerta;
     SQLiteDatabase db;
     SQLiteHelper helper;
-    Boolean blanco;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,64 +35,44 @@ public class Registro extends AppCompatActivity {
 
     }
 
-    public void Registrador(View view) {
+
+
+
+    public void Registro(View view) {
+
         helper = new SQLiteHelper(this);
 
         db = helper.getWritableDatabase();
-        alerta.setText("");
-        blanco = false;
 
         String nombre = String.valueOf(editnombre.getText());
-        if (nombre.isEmpty()){
-            blanco = true;
-        }
         String apellidos = String.valueOf(editapellidos.getText());
-        if (apellidos.isEmpty()){
-            blanco = true;
-        }
         String edad = String.valueOf(editedad.getText());
-        if (edad.isEmpty()){
-            blanco = true;
-        }
         String usuario = String.valueOf(editusuario.getText());
-        if (usuario.isEmpty()){
-            blanco = true;
-        }
         String password = String.valueOf(editpassword.getText());
-        if (password.isEmpty()){
-            blanco = true;
-        }
         String correo = String.valueOf(editcorreo.getText());
-        if (correo.isEmpty()){
-            blanco = true;
-        }
-
-        if(blanco = false ){
-            ContentValues values = new ContentValues();
-            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_NOMBRE,nombre);
-            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_APELLIDOS,apellidos);
-            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_EDAD,edad);
-            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO,usuario);
-            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_PASSWORD,password);
-            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_CORREO,correo);
-
-            db.insert(EstructuraBBDD.EstructuraUsuario.TABLE_NAME_USUARIO,null,values);
-            db.close();
-
-            editnombre.setText("");
-            editapellidos.setText("");
-            editedad.setText("");
-            editusuario.setText("");
-            editpassword.setText("");
-            editcorreo.setText("");
 
 
+        ContentValues values = new ContentValues();
+        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_NOMBRE,nombre);
+        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_APELLIDOS,apellidos);
+        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_EDAD,edad);
+        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO,usuario);
+        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_PASSWORD,password);
+        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_CORREO,correo);
 
-        }else {
-            alerta.setText("Uno o varios de los campos esta vacio");
-        }
+        db.insert(EstructuraBBDD.EstructuraUsuario.TABLE_NAME_USUARIO,null,values);
+        db.close();
 
+        editnombre.setText("");
+        editapellidos.setText("");
+        editedad.setText("");
+        editusuario.setText("");
+        editpassword.setText("");
+        editcorreo.setText("");
 
 
     }
+
+
+
 }

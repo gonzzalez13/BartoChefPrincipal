@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        android:onClick="Registrador"/>
+        android:onClick="Registro"/>
 
     <TextView
         android:id="@+id/txtAdevertencia"

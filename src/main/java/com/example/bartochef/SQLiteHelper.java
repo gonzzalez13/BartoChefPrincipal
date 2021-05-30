@@ -22,6 +22,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
         db.execSQL(EstructuraBBDD.SQL_CREATE_USUARIOS);
+
     }
 
     @Override
