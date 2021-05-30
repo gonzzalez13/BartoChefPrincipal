@@ -39,7 +39,7 @@ public class Registro extends AppCompatActivity {
 
 
     public void Registro(View view) {
-
+/*
         helper = new SQLiteHelper(this);
 
         db = helper.getWritableDatabase();
@@ -69,6 +69,8 @@ public class Registro extends AppCompatActivity {
         editusuario.setText("");
         editpassword.setText("");
         editcorreo.setText("");
+
+ */
 
 
     }
