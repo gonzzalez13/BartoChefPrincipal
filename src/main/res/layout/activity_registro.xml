@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editApellidos" />
 
     <EditText
-        android:id="@+id/edadUsuario"
+        android:id="@+id/editUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edadUsuario" />
+        app:layout_constraintTop_toBottomOf="@+id/editUser" />
 
     <EditText
         android:id="@+id/editCorreo"
@@ -108,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        android:onClick="Registro"/>
+        android:onClick="Registrar"/>
 
     <TextView
         android:id="@+id/txtAdevertencia"
@@ -122,5 +122,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editCorreo"
         app:layout_constraintVertical_bias="0.307" />
+
+    <TextView
+        android:id="@+id/TXTBOOL"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarse" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

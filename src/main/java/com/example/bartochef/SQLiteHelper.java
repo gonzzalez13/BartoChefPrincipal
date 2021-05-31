@@ -29,7 +29,11 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
 
         db.execSQL(EstructuraBBDD.SQL_DELETE_ENTRIES);
+        db.execSQL(EstructuraBBDD.SQL_CREATE_ENTRIES);
+
+
         db.execSQL(EstructuraBBDD.SQL_DELETE_USUARIO);
+        db.execSQL(EstructuraBBDD.SQL_CREATE_USUARIOS);
 
     }
 

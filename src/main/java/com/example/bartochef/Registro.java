@@ -14,9 +14,10 @@ public class Registro extends AppCompatActivity {
 
 
     EditText editnombre,editapellidos,editedad,editcontraseña,editusuario,editpassword,editcorreo;
-    TextView alerta;
+    TextView alerta,boo;
     SQLiteDatabase db;
     SQLiteHelper helper;
+    Boolean blanco;
 
 
     @Override
@@ -27,23 +28,25 @@ public class Registro extends AppCompatActivity {
         editnombre = findViewById(R.id.editNombre);
         editapellidos = findViewById(R.id.editApellidos);
         editedad = findViewById(R.id.editEdad);
-        editusuario = findViewById(R.id.editUsuario);
+        editusuario = findViewById(R.id.editUser);
         editpassword = findViewById(R.id.editPasswords);
         editcorreo = findViewById(R.id.editCorreo);
         alerta = findViewById(R.id.txtAdevertencia);
-
+        boo = findViewById(R.id.TXTBOOL);
+        blanco=false;
 
     }
 
 
 
 
-    public void Registro(View view) {
-/*
+    public void Registrar(View view) {
+
         helper = new SQLiteHelper(this);
 
         db = helper.getWritableDatabase();
-
+        blanco=false;
+        alerta.setText("");
         String nombre = String.valueOf(editnombre.getText());
         String apellidos = String.valueOf(editapellidos.getText());
         String edad = String.valueOf(editedad.getText());
@@ -51,30 +54,65 @@ public class Registro extends AppCompatActivity {
         String password = String.valueOf(editpassword.getText());
         String correo = String.valueOf(editcorreo.getText());
 
+        if (editnombre.getText().toString().trim().equalsIgnoreCase("")){
+            alerta.setText("Todos los datos deben ser nombre");
+            blanco = true;
+        }
 
-        ContentValues values = new ContentValues();
-        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_NOMBRE,nombre);
-        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_APELLIDOS,apellidos);
-        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_EDAD,edad);
-        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO,usuario);
-        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_PASSWORD,password);
-        values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_CORREO,correo);
+        if (editapellidos.getText().toString().trim().equalsIgnoreCase("")){
+            alerta.setText("Todos los datos deben ser apellidos");
+            blanco = true;
+        }
 
-        db.insert(EstructuraBBDD.EstructuraUsuario.TABLE_NAME_USUARIO,null,values);
-        db.close();
+        if (editedad.getText().toString().trim().equalsIgnoreCase("")){
+            alerta.setText("Todos los datos deben ser edad");
+            blanco = true;
+        }
 
-        editnombre.setText("");
-        editapellidos.setText("");
-        editedad.setText("");
-        editusuario.setText("");
-        editpassword.setText("");
-        editcorreo.setText("");
+        if (editusuario.getText().toString().trim().equalsIgnoreCase("")){
+        alerta.setText("Todos los datos deben ser user");
+            blanco = true;
+        }
 
- */
+        if (editpassword.getText().toString().trim().equalsIgnoreCase("")){
+        alerta.setText("Todos los datos deben ser password");
+            blanco = true;
+        }
+        if (editcorreo.getText().toString().trim().equalsIgnoreCase("")){
+        alerta.setText("Todos los datos deben ser correo");
+            blanco = true;
+        }
+        boo.setText(String.valueOf(blanco));
+
+        if(blanco == true){
+            alerta.setText("Todos los datos deben ser rellenados");
+
+        }else{
+            alerta.setText("");
+            ContentValues values = new ContentValues();
+
+            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_NOMBRE,nombre);
+            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_APELLIDOS,apellidos);
+            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_EDAD,edad);
+            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO,usuario);
+            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_PASSWORD,password);
+            values.put(EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_CORREO,correo);
+
+            db.insert(EstructuraBBDD.EstructuraUsuario.TABLE_NAME_USUARIO,null,values);
+            db.close();
+
+            editnombre.setText("");
+            editapellidos.setText("");
+            editedad.setText("");
+            editusuario.setText("");
+            editpassword.setText("");
+            editcorreo.setText("");
+
+        }
+
+
+
 
 
     }
-
-
-
 }

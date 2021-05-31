@@ -52,7 +52,7 @@ public class EstructuraBBDD {
 
 
     public static class EstructuraUsuario implements BaseColumns{
-        public static final String TABLE_NAME_USUARIO = "usaurio";
+        public static final String TABLE_NAME_USUARIO = "usuario";
         public static final String COLUMN_NAME_NOMBRE = "nombre";
         public static final String COLUMN_NAME_APELLIDOS = "apellidos";
         public static final String COLUMN_NAME_EDAD = "edad";
