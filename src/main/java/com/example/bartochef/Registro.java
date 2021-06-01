@@ -14,7 +14,7 @@ public class Registro extends AppCompatActivity {
 
 
     EditText editnombre,editapellidos,editedad,editcontraseña,editusuario,editpassword,editcorreo;
-    TextView alerta,boo;
+    TextView alerta;
     SQLiteDatabase db;
     SQLiteHelper helper;
     Boolean blanco;
@@ -32,7 +32,6 @@ public class Registro extends AppCompatActivity {
         editpassword = findViewById(R.id.editPasswords);
         editcorreo = findViewById(R.id.editCorreo);
         alerta = findViewById(R.id.txtAdevertencia);
-        boo = findViewById(R.id.TXTBOOL);
         blanco=false;
 
     }
@@ -82,7 +81,6 @@ public class Registro extends AppCompatActivity {
         alerta.setText("Todos los datos deben ser correo");
             blanco = true;
         }
-        boo.setText(String.valueOf(blanco));
 
         if(blanco == true){
             alerta.setText("Todos los datos deben ser rellenados");
