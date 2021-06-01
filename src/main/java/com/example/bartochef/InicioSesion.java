@@ -53,6 +53,7 @@ public class InicioSesion extends AppCompatActivity {
         Cursor curso = db.query(EstructuraBBDD.EstructuraUsuario.TABLE_NAME_USUARIO,columns,selection,SelectionArgs,groupBy,having,orderBy);
 
         if (curso.moveToFirst()) {
+
             String nombre = curso.getString(curso.getColumnIndex("nombre"));
             String apellidos = curso.getString(curso.getColumnIndex("apellidos"));
             String edad = curso.getString(curso.getColumnIndex("edad"));
