@@ -14,7 +14,7 @@ public class InicioSesion extends AppCompatActivity {
     Usuario cocinero;
     SQLiteDatabase db;
     SQLiteHelper helper;
-    String usuario;
+    String usuario,contra;
     EditText user,password;
     TextView alerta;
 
@@ -32,18 +32,18 @@ public class InicioSesion extends AppCompatActivity {
     public void inicio(View view) {
 
         usuario = String.valueOf(user.getText());
-       // Intent i = new Intent(this,Perfil.class);// startActivity(i);
-        verificar(usuario);
+        contra = String.valueOf(password.getText());
+        verificar(usuario,contra);
     }
 
 
 
-    public void verificar(String usuario){
+    public void verificar(String usuario,String contra){
 
         helper = new SQLiteHelper(this);
         db = helper.getReadableDatabase();
 
-        String[] columns = {EstructuraBBDD.EstructuraUsuario._ID, EstructuraBBDD.EstructuraUsuario.TABLE_NAME_USUARIO, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_APELLIDOS, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_EDAD, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_PASSWORD, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_CORREO};
+        String[] columns = {EstructuraBBDD.EstructuraUsuario._ID, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_NOMBRE, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_APELLIDOS, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_EDAD, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_PASSWORD, EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_CORREO};
         String selection = EstructuraBBDD.EstructuraUsuario.COLUMN_NAME_USUARIO +" = (?)";
         String[] SelectionArgs = {usuario};
         String groupBy= null;
@@ -57,12 +57,17 @@ public class InicioSesion extends AppCompatActivity {
             String apellidos = curso.getString(curso.getColumnIndex("apellidos"));
             String edad = curso.getString(curso.getColumnIndex("edad"));
             String username = curso.getString(curso.getColumnIndex("usuario"));
-            String contra = curso.getString(curso.getColumnIndex("password"));
+            String password = curso.getString(curso.getColumnIndex("password"));
             String correo = curso.getString(curso.getColumnIndex("correo"));
 
             cocinero = new Usuario(nombre,apellidos,edad,username,contra,correo);
-            if(contra.equals(password)){
+            if(password.equals(contra)){
                 alerta.setText("Todo es correcto");
+                Intent i = new Intent(this,Perfil.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Usuario",cocinero);
+                i.putExtras(bundle);
+                startActivity(i);
             }else{
                 alerta.setText("Error en la contraseña");
             }

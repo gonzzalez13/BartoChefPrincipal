@@ -95,7 +95,7 @@ public class BusquedasElementos extends AppCompatActivity implements AdapterView
         receta = new Receta(titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,foto);
         Intent i = new Intent(this,Ficha_receta.class);
         Bundle bundle = new Bundle();
-         bundle.putSerializable("Receta",receta);
+        bundle.putSerializable("Receta",receta);
         i.putExtras(bundle);
         startActivity(i);
 
