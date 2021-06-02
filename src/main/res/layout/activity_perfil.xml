@@ -6,6 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".Perfil" >
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="213dp"
+                app:srcCompat="@drawable/chef" />
+
+            <TextView
+                android:id="@+id/TxtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/TxtEdad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/TxtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="#FF5722" />
+
+            <ListView
+                android:id="@+id/ListChef"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+            </ListView>
+
+            <Button
+                android:id="@+id/btnIngresar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Añadir" />
+
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="410dp"
