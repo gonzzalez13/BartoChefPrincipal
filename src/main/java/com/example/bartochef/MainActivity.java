@@ -17,7 +17,6 @@ import android.widget.ImageView;
 public class MainActivity extends Activity {
 
     int tiempo=5000;
-    Handler handler = new Handler();
     SQLiteDatabase db;
     SQLiteHelper helper;
     @Override
@@ -33,6 +32,7 @@ public class MainActivity extends Activity {
         db = helper.getWritableDatabase();
         db.delete(EstructuraBBDD.EstructuraRecta.TABLE_NAME_RECETAS,null,null);
         BBDDRecetas();
+        BBDDUsuario();
         esperarYCerrar(tiempo);
     }
 

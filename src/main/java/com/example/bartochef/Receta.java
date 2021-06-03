@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Receta implements Serializable {
 
+    private int id;
     private String titulo;
     private String chef;
     private String categoria;
@@ -26,6 +27,20 @@ public class Receta implements Serializable {
         this.plato = plato;
     }
 
+    public Receta(int id, String titulo, String chef, String categoria, String nacionalidad, String ingredientes, String preparacion, int plato) {
+        this.id = id;
+        this.titulo = titulo;
+        this.chef = chef;
+        this.categoria = categoria;
+        this.nacionalidad = nacionalidad;
+        this.ingredientes = ingredientes;
+        this.preparacion = preparacion;
+        this.plato = plato;
+    }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getTitulo() {
         return titulo;

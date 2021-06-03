@@ -62,19 +62,27 @@
 
             </ListView>
 
-            <Button
-                android:id="@+id/btnIngresar"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Añadir"
-                android:onClick="Añadir"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnModifcar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Modificar" />
+                <Button
+                    android:id="@+id/btnIngresar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="Añadir"
+                    android:text="Añadir" />
+
+                <Button
+                    android:id="@+id/btnModifcar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Modificar"
+                    android:onClick="Modificar"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

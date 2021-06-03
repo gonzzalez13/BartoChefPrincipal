@@ -13,58 +13,37 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-public class Perfil extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class Modificar extends AppCompatActivity implements  AdapterView.OnItemClickListener {
 
     SQLiteDatabase db;
     SQLiteHelper helper;
-    TextView txtnombre,txtedad,txtcorreo;
-    String nombre,apellidos,edad,correo,usuario,password;
     ListView lv;
-    Usuario user;
+    String chef;
     Receta receta;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfil);
-        user = (Usuario) getIntent().getSerializableExtra("Usuario");
-        txtnombre = findViewById(R.id.TxtNombre);
-        txtedad = findViewById(R.id.TxtEdad);
-        txtcorreo = findViewById(R.id.TxtCorreo);
-        lv = findViewById(R.id.ListChef);
+        setContentView(R.layout.activity_modificar);
+        Bundle bundle = getIntent().getExtras();
+        chef = bundle.getString("chef").toString();
+        lv = findViewById(R.id.listModi);
 
-
-        nombre = user.getNombre();
-        apellidos = user.getApellidos();
-        edad = user.getEdad();
-        correo = user.getCorreo();
-        usuario = user.getUsername();
-        password = user.getPassword();
-
-
-
-        txtnombre.setText(nombre+ " "+ apellidos);
-        txtedad.setText(edad);
-        txtcorreo.setText(correo);
-
-
-        filtro(usuario);
+        filtro(chef);
         lv.setOnItemClickListener(this);
-
     }
 
 
-
-    public void filtro(String usuario){
+    public void filtro(String Chef){
 
         helper = new SQLiteHelper(this);
         db = helper.getReadableDatabase();
 
         String[] columns = {EstructuraBBDD.EstructuraRecta._ID,EstructuraBBDD.EstructuraRecta.COLUMN_NAME_NOMBRE,EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CHEF, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_IMAGEN, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CALORIAS, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CATEGORIA, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_NACIONALIDAD, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_INGREDIENTES, EstructuraBBDD.EstructuraRecta.COLUMN_NAME_PREPARACION};
         String selection = EstructuraBBDD.EstructuraRecta.COLUMN_NAME_CHEF +" = (?)";
-        String[] SelectionArgs = {usuario};
+        String[] SelectionArgs = {Chef};
         String groupBy= null;
         String having = null;
         String orderBy = null;
@@ -82,26 +61,10 @@ public class Perfil extends AppCompatActivity implements AdapterView.OnItemClick
     }
 
 
-    public void home(View view) {
-        Intent i = new Intent(this,inicio.class);
-        startActivity(i);
-    }
-
-    public void buscar(View view) {
-        Intent i = new Intent(this,Buscador.class);
-        startActivity(i);
-    }
-
-    public void perfil(View view) {
-        Intent i = new Intent(this,Perfil.class);
-        startActivity(i);
-    }
-
-    @Override
     public void onItemClick(AdapterView<?> listView, View view, int position, long id) {
         Cursor cursor=(Cursor) listView.getItemAtPosition(position);
 
-
+        int _id = cursor.getInt(0);
         String titulo=cursor.getString(1) ;
         String Categoria=cursor.getString(5 );
         String chef=cursor.getString(2 );
@@ -111,28 +74,13 @@ public class Perfil extends AppCompatActivity implements AdapterView.OnItemClick
         int foto= cursor.getInt(3);
 
 
-        receta = new Receta(titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,foto);
-        Intent i = new Intent(this,Ficha_receta.class);
+        receta = new Receta(_id,titulo,Categoria,chef,nacionalidad,ingredientes,prepacacion,foto);
+        Intent i = new Intent(this,Ficha_Modificar.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("Receta",receta);
         i.putExtras(bundle);
         startActivity(i);
 
-    }
 
-    public void Añadir(View view) {
-        Usuario cocinero = new Usuario(nombre,apellidos,edad,usuario,password,correo);
-        Intent i = new Intent(this,Anadir_Ficha.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("Usuario",cocinero);
-        i.putExtras(bundle);
-        startActivity(i);
-    }
-
-    public void Modificar(View view) {
-
-        Intent i = new Intent(this,Modificar.class);
-        i.putExtra("chef",usuario);
-        startActivity(i);
     }
 }
