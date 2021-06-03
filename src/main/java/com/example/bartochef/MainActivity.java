@@ -64,6 +64,21 @@ public class MainActivity extends Activity {
 
     }
 
+    private void insertarUser(String Nombre,String Apellidos,String edad,String Username,String password,String correo){
+        ContentValues values = new ContentValues();
+        values.put("nombre",Nombre);
+        values.put("apellidos", Apellidos);
+        values.put("edad",edad);
+        values.put("usuario",Username);
+        values.put("password",password);
+        values.put("correo",correo);
+        db.insert("usuario",null,values);
+
+    }
+
+    private  void BBDDUsuario(){
+        insertarUser("Alberto","Gonzalez Bermejo","25","Barto","admin","agonzalezbermejo13@gmail.com");
+    }
     private void BBDDRecetas(){
 
         inserta("Albongidas en Salsa",213,"Carnes","Barto", R.drawable.albondigas,

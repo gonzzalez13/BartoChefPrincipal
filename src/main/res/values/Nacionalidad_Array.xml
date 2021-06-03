@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="opciones_Nacionalidad">
+        <item>España</item>
+        <item>EEUU</item>
+        <item>Japon</item>
+        <item>Italia</item>
+        <item>China</item>
+        <item>Francia</item>
+        <item>Reino unido</item>
+        <item>Turquia</item>
+    </string-array>
+</resources>

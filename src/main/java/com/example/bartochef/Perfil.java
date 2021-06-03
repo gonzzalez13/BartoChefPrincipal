@@ -20,7 +20,7 @@ public class Perfil extends AppCompatActivity implements AdapterView.OnItemClick
     SQLiteDatabase db;
     SQLiteHelper helper;
     TextView txtnombre,txtedad,txtcorreo;
-    String nombre,apellidos,edad,correo,usuario;
+    String nombre,apellidos,edad,correo,usuario,password;
     ListView lv;
     Usuario user;
     Receta receta;
@@ -41,6 +41,7 @@ public class Perfil extends AppCompatActivity implements AdapterView.OnItemClick
         edad = user.getEdad();
         correo = user.getCorreo();
         usuario = user.getUsername();
+        password = user.getPassword();
 
 
 
@@ -117,5 +118,14 @@ public class Perfil extends AppCompatActivity implements AdapterView.OnItemClick
         i.putExtras(bundle);
         startActivity(i);
 
+    }
+
+    public void Añadir(View view) {
+        Usuario cocinero = new Usuario(nombre,apellidos,edad,usuario,password,correo);
+        Intent i = new Intent(this,Anadir_Ficha.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("Usuario",cocinero);
+        i.putExtras(bundle);
+        startActivity(i);
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opciones_Categoria">
+        <item>Carnes</item>
+        <item>Pescados</item>
+        <item>Vegetarianos</item>
+        <item>Pasta</item>
+        <item>Arroces</item>
+        <item>Postre</item>
+        <item>Sopas</item>
+        <item>Legumbres</item>
+    </string-array>
+
+
+</resources>

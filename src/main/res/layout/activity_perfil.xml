@@ -23,12 +23,14 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="213dp"
+                android:layout_marginTop="8dp"
                 app:srcCompat="@drawable/chef" />
 
             <TextView
                 android:id="@+id/TxtNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="TextView"
                 android:textSize="18sp" />
 
@@ -43,6 +45,7 @@
                 android:id="@+id/TxtCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="TextView"
                 android:textSize="18sp" />
 
@@ -64,7 +67,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Añadir" />
+                android:text="Añadir"
+                android:onClick="Añadir"/>
+
+            <Button
+                android:id="@+id/btnModifcar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modificar" />
 
         </LinearLayout>
     </ScrollView>

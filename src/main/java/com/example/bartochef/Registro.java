@@ -54,36 +54,35 @@ public class Registro extends AppCompatActivity {
         String correo = String.valueOf(editcorreo.getText());
 
         if (editnombre.getText().toString().trim().equalsIgnoreCase("")){
-            alerta.setText("Todos los datos deben ser nombre");
+            alerta.setText("Falta el nombre");
             blanco = true;
         }
 
         if (editapellidos.getText().toString().trim().equalsIgnoreCase("")){
-            alerta.setText("Todos los datos deben ser apellidos");
+            alerta.setText("Faltan los apellidos");
             blanco = true;
         }
 
         if (editedad.getText().toString().trim().equalsIgnoreCase("")){
-            alerta.setText("Todos los datos deben ser edad");
+            alerta.setText("Falta la edad");
             blanco = true;
         }
 
         if (editusuario.getText().toString().trim().equalsIgnoreCase("")){
-        alerta.setText("Todos los datos deben ser user");
+        alerta.setText("Falta el user");
             blanco = true;
         }
 
         if (editpassword.getText().toString().trim().equalsIgnoreCase("")){
-        alerta.setText("Todos los datos deben ser password");
+        alerta.setText("Falta la password");
             blanco = true;
         }
         if (editcorreo.getText().toString().trim().equalsIgnoreCase("")){
-        alerta.setText("Todos los datos deben ser correo");
+        alerta.setText("Falta el correo");
             blanco = true;
         }
 
         if(blanco == true){
-            alerta.setText("Todos los datos deben ser rellenados");
 
         }else{
             alerta.setText("");
